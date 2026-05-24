@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display:grid;
+            justify-content: center;
+            align-content: center;
+            height:100vh;
+        }
+        .container{
+            width:50%;
+            display:grid;
+            grid-template: repeat(6,1fr)/repeat(7,1fr);
+            gap:10px;
+        }
+        .box{
+            height:80px;
+            width:80px;
+            border-radius: 80px;
+            border: 1px solid black;
+        }
+        .box:hover{
+            background: linear-gradient(#D58BDD,pink,salmon,#d238e4);
+            border-color: rgb(128, 0, 128);
+        }
+        h1{
+            text-align: center;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="winner"></h1>
+    <div class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+</body>
+<script>
+    const boxes=document.querySelectorAll('.box');
+    const win=document.querySelector('.winner');
+    let ball=[];
+    for(let i=0;i<6;i++)
+    {
+        let row=[];
+        for(let j=0;j<7;j++)
+        {
+            row.push('');
+        }
+        ball.push(row);
+    }
+
+    console.log(ball);
+    let currentPlayer=1;
+    let gameover=false;
+    boxes.forEach((box,index)=>{
+        box.addEventListener('click',()=>{
+            
+            let row=Math.floor(index/7);
+            let col=index%7;
+            row=fill(row,col);
+            if(row==undefined || gameover)
+            {
+                return;
+            }
+            ball[row][col]=currentPlayer;
+            let ind=row*7+col
+            console.log(`current player ${ball[row][col]} and its index ${row} and ${col}`);
+            boxes[ind].style.backgroundColor=currentPlayer===1?'Yellow':'Red';
+            winner(currentPlayer);
+
+            currentPlayer=currentPlayer===1?2:1;
+
+            
+        });
+    });
+
+    function fill(r,c){
+        for(let row=5;row>=0;row--)
+        {
+            if(ball[row][c]=='')
+            {
+                return row;
+            }
+        }
+    }
+    let c=1;
+    const diagonalPatterns = [
+    // ↘ top-left to bottom-right
+    [[0,0],[1,1],[2,2],[3,3]],
+    [[0,1],[1,2],[2,3],[3,4]],
+    [[0,2],[1,3],[2,4],[3,5]],
+    [[0,3],[1,4],[2,5],[3,6]],
+
+    [[1,0],[2,1],[3,2],[4,3]],
+    [[1,1],[2,2],[3,3],[4,4]],
+    [[1,2],[2,3],[3,4],[4,5]],
+    [[1,3],[2,4],[3,5],[4,6]],
+
+    [[2,0],[3,1],[4,2],[5,3]],
+    [[2,1],[3,2],[4,3],[5,4]],
+    [[2,2],[3,3],[4,4],[5,5]],
+    [[2,3],[3,4],[4,5],[5,6]],
+
+    // ↗ bottom-left to top-right
+    [[5,0],[4,1],[3,2],[2,3]],
+    [[5,1],[4,2],[3,3],[2,4]],
+    [[5,2],[4,3],[3,4],[2,5]],
+    [[5,3],[4,4],[3,5],[2,6]],
+
+    [[4,0],[3,1],[2,2],[1,3]],
+    [[4,1],[3,2],[2,3],[1,4]],
+    [[4,2],[3,3],[2,4],[1,5]],
+    [[4,3],[3,4],[2,5],[1,6]],
+
+    [[3,0],[2,1],[1,2],[0,3]],
+    [[3,1],[2,2],[1,3],[0,4]],
+    [[3,2],[2,3],[1,4],[0,5]],
+    [[3,3],[2,4],[1,5],[0,6]],
+];
+    function winner(winner){
+        c=1;
+        //horizontal win
+        for(let i=0;i<6;i++)
+        {
+            for(let j=1;j<7;j++)
+            {
+                if(ball[i][j] && ball[i][j-1]==ball[i][j])
+                c++;
+                else
+                c=1;
+                if(c==4)
+                {
+                console.log(`Player ${winner} Wins🎉`);
+                win.innerHTML=`Player ${winner} Wins🎉`;
+                gameover=true;
+                return;
+                }
+            }
+        }
+        //vertical win
+        c=1;
+        for(let k=0;k<7;k++)
+        {
+            for(let l=1;l<6;l++)
+            {
+                if(ball[l][k] && ball[l-1][k]==ball[l][k])
+                c++;
+                else
+                c=1;
+                if(c==4)
+                {
+                console.log(`Player ${winner} Wins🎉`);
+                win.innerHTML=`Player ${winner} Wins🎉`;
+                gameover=true;
+                return;
+                }
+            }
+        }
+
+        for(const pattern of diagonalPatterns)
+            {
+                let first = pattern[0];
+                
+                let value = ball[first[0]][first[1]];
+
+                if(value == '') continue;
+
+                let isWin = true;
+
+                for(const [r,c] of pattern)
+                {
+                    if(ball[r][c] != value)
+                    {
+                        isWin = false;
+                        break;
+                    }
+                }
+
+                if(isWin)
+                {
+                    console.log(`${value} wins🎉`);
+                    win.innerHTML=`Player ${winner} Wins🎉`;
+                    gameover=true;
+                }
+            }
+        }
+</script>
+</html>

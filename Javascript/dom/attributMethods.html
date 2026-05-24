@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute Methods</title>
+</head>
+<body>
+    <h1>
+        Attribute Methods
+    </h1>
+    <h4>.attributes</h4>
+    <h4>.getAttribute()</h4>
+    <h4>.setAttribute()</h4>
+    <h4>.hasAttribute()</h4>
+    <h4>.removeAttribute()</h4>
+    <input type="text" id="username" placeholder="username">
+</body>
+<script>
+    const input=document.getElementById('username');
+    console.log(input.attributes);
+    console.log(input.getAttribute('type'));
+    console.log(input.getAttribute('placeholder'));
+
+    //.setAttrinute(name,value);
+    input.setAttribute('class','user');
+    console.log(input);
+    console.log(input.attributes);
+
+    console.log(input.hasAttribute('class'));
+    console.log(input.hasAttribute('required'));
+
+    input.removeAttribute('placeholder');
+    console.log(input);
+    
+</script>
+</html>

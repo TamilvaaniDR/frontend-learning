@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Events Practice</title>
+
+    <style>
+        body{
+            font-family:Arial, sans-serif;
+            padding:20px;
+            line-height:1.8;
+        }
+
+        section{
+            margin-bottom:40px;
+            padding:20px;
+            border:2px solid #ccc;
+            border-radius:10px;
+        }
+
+        button,input,textarea,select{
+            margin:10px 0;
+            padding:10px;
+        }
+
+        #mouseBox{
+            width:250px;
+            height:120px;
+            background-color:lightblue;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            margin-top:10px;
+        }
+
+        #dragBox{
+            width:120px;
+            padding:15px;
+            background-color:orange;
+            cursor:grab;
+        }
+
+        #dropZone{
+            width:250px;
+            height:120px;
+            border:3px dashed black;
+            margin-top:20px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Complete JavaScript Events Practice</h1>
+
+    <!-- ================================================= -->
+    <!-- 1. WINDOW EVENTS -->
+    <!-- ================================================= -->
+
+    <section>
+        <h2>1. Window Events</h2>
+
+        <p>Open console and refresh page</p>
+
+        <!-- load -->
+        <!-- Triggered after entire webpage loads -->
+
+        <!-- DOMContentLoaded -->
+        <!-- Triggered after HTML loads -->
+    </section>
+
+    <!-- ================================================= -->
+    <!-- 2. MOUSE EVENTS -->
+    <!-- ================================================= -->
+
+    <section>
+        <h2>2. Mouse Events</h2>
+
+        <button id="clickBtn">Click Events Button</button>
+
+        <div id="mouseBox">
+            Hover or Move Mouse Here
+        </div>
+    </section>
+
+    <!-- ================================================= -->
+    <!-- 3. KEYBOARD EVENTS -->
+    <!-- ================================================= -->
+
+    <section>
+        <h2>3. Keyboard Events</h2>
+
+        <input type="text" id="keyboardInput" placeholder="Type something">
+    </section>
+
+    <!-- ================================================= -->
+    <!-- 4. FORM / INPUT EVENTS -->
+    <!-- ================================================= -->
+
+    <section>
+        <h2>4. Form Events</h2>
+
+        <form id="myForm">
+
+            <input type="text" id="nameInput" placeholder="Enter name">
+
+            <br>
+
+            <select id="course">
+                <option value="">Select Course</option>
+                <option value="Java">Java</option>
+                <option value="JavaScript">JavaScript</option>
+            </select>
+
+            <br>
+
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+
+        </form>
+    </section>
+
+    <!-- ================================================= -->
+    <!-- 5. SCROLL EVENT -->
+    <!-- ================================================= -->
+
+    <section style="height:500px;">
+        <h2>5. Scroll Event</h2>
+
+        <p>Scroll the page and check console</p>
+    </section>
+
+    <!-- ================================================= -->
+    <!-- 6. CLIPBOARD EVENTS -->
+    <!-- ================================================= -->
+
+    <section>
+        <h2>6. Clipboard Events</h2>
+
+        <textarea id="clipText" rows="4" cols="40">
+Try Copy / Cut / Paste here
+        </textarea>
+    </section>
+
+    <!-- ================================================= -->
+    <!-- 7. DRAG EVENTS -->
+    <!-- ================================================= -->
+
+    <section>
+        <h2>7. Drag and Drop Events</h2>
+
+        <div id="dragBox" draggable="true">
+            Drag Me
+        </div>
+
+        <div id="dropZone">
+            Drop Here
+        </div>
+    </section>
+
+    <!-- ================================================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ================================================= -->
+
+    <script>
+
+        // =================================================
+        // 1. WINDOW EVENTS
+        // =================================================
+
+        // load -> Entire webpage loaded including images
+
+        window.addEventListener("load", () => {
+            console.log("1. Window Load Event");
+        });
+
+        // DOMContentLoaded -> HTML loaded
+
+        document.addEventListener("DOMContentLoaded", () => {
+            console.log("2. DOMContentLoaded Event");
+        });
+
+
+
+
+        // =================================================
+        // 2. MOUSE EVENTS
+        // =================================================
+
+        const clickBtn = document.getElementById("clickBtn");
+
+        // mousedown -> Mouse button pressed
+
+        clickBtn.addEventListener("mousedown", () => {
+            console.log("3. Mouse Down Event");
+        });
+
+        // mouseup -> Mouse button released
+
+        clickBtn.addEventListener("mouseup", () => {
+            console.log("4. Mouse Up Event");
+        });
+
+        // click -> Complete click action
+
+        clickBtn.addEventListener("click", () => {
+            console.log("5. Click Event");
+        });
+
+        // dblclick -> Double click
+
+        clickBtn.addEventListener("dblclick", () => {
+            console.log("6. Double Click Event");
+        });
+
+
+
+        const mouseBox = document.getElementById("mouseBox");
+
+        // mouseover -> Mouse enters element
+
+        mouseBox.addEventListener("mouseover", () => {
+            console.log("7. Mouse Over Event");
+        });
+
+        // mouseout -> Mouse leaves element
+
+        mouseBox.addEventListener("mouseout", () => {
+            console.log("8. Mouse Out Event");
+        });
+
+        // mousemove -> Mouse moves inside element
+
+        mouseBox.addEventListener("mousemove", () => {
+            console.log("9. Mouse Move Event");
+        });
+
+        // contextmenu -> Right click
+
+        mouseBox.addEventListener("contextmenu", (e) => {
+
+            e.preventDefault();
+
+            console.log("10. Right Click Event");
+        });
+
+
+
+
+        // =================================================
+        // 3. KEYBOARD EVENTS
+        // =================================================
+
+        const keyboardInput = document.getElementById("keyboardInput");
+
+        // keydown -> Key pressed
+
+        keyboardInput.addEventListener("keydown", (e) => {
+            console.log("11. Key Down:", e.key);
+        });
+
+        // keyup -> Key released
+
+        keyboardInput.addEventListener("keyup", (e) => {
+            console.log("12. Key Up:", e.key);
+        });
+
+
+
+
+        // =================================================
+        // 4. FORM / INPUT EVENTS
+        // =================================================
+
+        const nameInput = document.getElementById("nameInput");
+
+        // focus -> Input selected
+
+        nameInput.addEventListener("focus", () => {
+            console.log("13. Focus Event");
+        });
+
+        // blur -> Input loses focus
+
+        nameInput.addEventListener("blur", () => {
+            console.log("14. Blur Event");
+        });
+
+        // input -> Every value change
+
+        nameInput.addEventListener("input", () => {
+            console.log("15. Input Event");
+        });
+
+
+
+        const course = document.getElementById("course");
+
+        // change -> Value changed
+
+        course.addEventListener("change", () => {
+            console.log("16. Change Event");
+        });
+
+
+
+        const myForm = document.getElementById("myForm");
+
+        // submit -> Form submitted
+
+        myForm.addEventListener("submit", (e) => {
+
+            e.preventDefault();
+
+            console.log("17. Submit Event");
+        });
+
+        // reset -> Form reset
+
+        myForm.addEventListener("reset", () => {
+            console.log("18. Reset Event");
+        });
+
+
+
+
+        // =================================================
+        // 5. SCROLL EVENT
+        // =================================================
+
+        // scroll -> Page scrolling
+
+        window.addEventListener("scroll", () => {
+            console.log("19. Scroll Event");
+        });
+
+
+
+
+        // =================================================
+        // 6. CLIPBOARD EVENTS
+        // =================================================
+
+        const clipText = document.getElementById("clipText");
+
+        // copy -> Text copied
+
+        clipText.addEventListener("copy", () => {
+            console.log("20. Copy Event");
+        });
+
+        // cut -> Text cut
+
+        clipText.addEventListener("cut", () => {
+            console.log("21. Cut Event");
+        });
+
+        // paste -> Text pasted
+
+        clipText.addEventListener("paste", () => {
+            console.log("22. Paste Event");
+        });
+
+
+
+
+        // =================================================
+        // 7. DRAG EVENTS
+        // =================================================
+
+        const dragBox = document.getElementById("dragBox");
+
+        const dropZone = document.getElementById("dropZone");
+
+        // dragstart -> Drag begins
+
+        dragBox.addEventListener("dragstart", () => {
+            console.log("23. Drag Start Event");
+        });
+
+        // dragend -> Drag ends
+
+        dragBox.addEventListener("dragend", () => {
+            console.log("24. Drag End Event");
+        });
+
+
+
+        // Needed to allow dropping
+
+        dropZone.addEventListener("dragover", (e) => {
+            e.preventDefault();
+        });
+
+        // drop -> Element dropped
+
+        dropZone.addEventListener("drop", () => {
+            console.log("25. Drop Event");
+
+            dropZone.innerHTML = "Item Dropped!";
+        });
+
+    </script>
+
+</body>
+</html>

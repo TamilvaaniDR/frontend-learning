@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welcome</title>
+        <style>
+            body{
+                color:floralwhite;
+                background-color:crimson;
+            }
+            table,td,th{
+                border:1px solid black;
+                border-collapse: collapse;
+                padding:10px;
+                margin:10px;
+            }
+            p,h1,form{
+                font-family: sans-serif;
+                font-size: medium;
+                text-align:center;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <header>
+        <h1>Learn HTML</h1>
+        </header>
+        <br>
+        <section>
+        <ul style="list-style: square;">
+            <li>Basics</li>
+            <li>Intermediate</li>
+            <li>Advanced</li>
+        </ul>
+        </section>
+        <hr>
+        <section>
+        <table>
+            <thead>
+            <tr>
+                <th>Time</th>
+                <th>Content</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>10Am</td>
+                <td>HTML</td>
+                <td>On-going</td>
+            </tr>
+            <tr>
+                <td>12Pm</td>
+                <td>CSS</td>
+                <td>Not yet Started</td>
+            </tr>
+            <tr>
+                <td>3Pm</td>
+                <td>Js</td>
+                <td>Not yet Started</td>
+            </tr>
+            </tbody>
+        </table>
+        </section>
+        <hr>
+        <section>
+        <ol>
+            <li>Basics</li>
+            <li>Intermediate</li>
+            <li>Advanced</li>
+        </ol>
+        </section>
+        <hr>
+        <section>
+        <form>
+            <fieldset>
+                <legend>Details</legend>
+            <label for="name">Name</label>
+            <input type="text" id="name">
+            <br><br>
+            <label for="dob">DOB</label>
+            <input type="date" id="dob" min=2005-01-01 max=2026-01-01>
+            <br><br>
+            <label for="interest">Interest</label>
+            <input type="radio" id="interest1" name="html">HTML
+            <input type="radio" id="interest2" name="css">CSS
+            <input type="radio" id="interest3" name="js">JS
+            <br><br>
+            <label for="AoI">Area of Interest</label>
+            <input type="checkbox" id="Aof1" name="os">OS
+            <input type="checkbox" id="Aof2" name="dbms">DBMS
+            <input type="checkbox" id="Aof3" name="ds">DS
+            <br><br>
+            <label for="pno">Mobile No</label>
+            <input type="number" id="pno" name="no">
+            <br><br>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="mail">
+            <br><br>
+            <input type="submit" name="submit" value="submit">
+            <input type="reset" name="reset" value="reset">
+            </fieldset>
+        </form>
+        </section>
+
+        <footer>
+            
+    <video width="320" height="100" controls>
+        <source src="demo1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <br>
+    <a href="https://www.sanfoundry.com/"><img src="https://www.sanfoundry.com/sanfoundry-logo" alt="click the image and go to link" /></a>
+    <blockquote>
+  Success is not final, failure is not fatal: it is the courage to continue that counts.
+</blockquote>   
+
+<br><br>
+
+<meter value="70" min="0" max="100"></meter>
+<br><br>
+<progress id="p" value="0" max="100"></progress>
+
+<script>
+let i = 0;
+setInterval(() => {
+  document.getElementById("p").value = i++;
+}, 100);
+</script>
+<br><br>
+
+<dl>
+  <dt>HTML</dt>
+  <dd>HyperText Markup Language used to create web pages.</dd>
+
+  <dt>CSS</dt>
+  <dd>Used to style and design web pages.</dd>
+
+  <dt>JavaScript</dt>
+  <dd>Used to make web pages interactive.</dd>
+</dl>
+</body>
+</html>

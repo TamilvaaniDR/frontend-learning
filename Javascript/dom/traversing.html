@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traversing HTML Elements</title>
+</head>
+<body>
+    <!--.conatainer's child is only sub not p's inside it-->
+    <!---p's parent is sub only not .container-->
+    <!--nesting wont work here as parent or as child , only direct relation-->
+    <div class="container"><div class="sub"><p>Paragraph1</p><p class="title">Paragraph2</p><p>Paragraph3</p><p>Paragraph4</p></div></div>
+       
+    <div class="eg">
+        <h1>Edge case 1</h1>
+        <h1>Edge case 2</h1>
+    </div>
+    
+</body>
+<script>
+    const c=document.querySelector('.title');
+    console.log("Selecting Parent Element");
+    console.log(c.parentNode);
+
+    const p=document.querySelector('.container');
+    console.log("Selecting Child Elements");
+    console.log(p.firstChild);//if space is exist between <div> and first <p> --> #text orelse <p>Paragraph1</p>
+
+    console.log(p.lastChild);// if space is exist between last <p> and </div> --> #text orelse <p>Paragraph4</p>
+ 
+    console.log(p.childNodes); // space is considered
+
+    console.log(p.firstElementChild); // doesn't consider spaces 
+    console.log(p.lastElementChild); // doesn't consider spaces
+
+   // console.log(p.childElement);
+   console.log("Selecting Sibiling Elements");
+   console.log(c.previousElementSibling);
+   console.log(c.nextElementSibling);
+
+
+/*firstChild and lastChild
+→ include text nodes (spaces/new lines)
+
+firstElementChild and lastElementChild
+→ only HTML elements*/
+
+    const eg=document.querySelector(".eg");
+    console.log(eg.childNodes);
+</script>
+</html>

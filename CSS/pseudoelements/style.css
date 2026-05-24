@@ -1,0 +1,25 @@
+#p1::first-letter{
+    color:blueviolet;
+    background-color: aqua;
+}
+.p2::first-line{
+    color:brown;
+    background-color: blanchedalmond;
+}
+#p1::after{
+    content:'🎉';
+}
+.p2::before{
+    content:'✨';
+    font-size: 2rem;
+}
+.p3::selection{
+    color:crimson;
+    background-color: chartreuse;
+}
+ul li::marker{
+    color: gold;
+}
+ol li::marker{
+    color:chocolate;
+}

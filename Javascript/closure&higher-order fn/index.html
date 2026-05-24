@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        [ Higher-Order Function ]
+            ├── Takes a function as an argument (e.g., callTwice)
+            └── OR Returns a function as a result (e.g., multiplier)
+    </pre>
+
+    <pre>
+        Outer Function Scope (Executes and leaves)
+        └── Variable: factor = 2
+                │
+                └── Inner Function (Retains access via Closure)
+                    └── Computes: number * factor
+    </pre>
+</body>
+<script>
+    function makeBankAccount(initialBalance) {
+  // 'balance' is a private variable trapped in a closure
+  let balance = initialBalance; 
+
+  // Returning an object with functions (Higher-Order Function behavior)
+  return {
+    checkBalance: function() {
+      return balance; 
+    },
+    deposit: function(amount) {
+      balance += amount;
+    }
+  };
+}
+
+const myAccount = makeBankAccount(100);
+myAccount.deposit(50);
+console.log(myAccount.checkBalance()); // Outputs 150
+// console.log(balance); // Error! balance is hidden outside the closure.
+</script>
+</html>

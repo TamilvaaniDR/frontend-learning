@@ -1,0 +1,27 @@
+body{
+    background-color: black;
+}
+
+.conatiner{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.btn-border{
+    padding:5px;
+    background: linear-gradient(rgb(230, 185, 5),rgb(234, 178, 101),rgb(239, 120, 118),rgb(123, 72, 151),rgb(214, 214, 15),rgb(215, 13, 13));
+}
+.btn{
+    padding:10px;
+    background-color: black;
+    color: aliceblue;
+}
+.btn-border:hover{
+    background: linear-gradient(rgb(113, 165, 204),rgb(218, 49, 110),rgb(65, 234, 195));
+}
+.btn-border:hover .btn{
+    padding: 20px;
+    font-size: 2rem;
+    color:cornsilk;
+}

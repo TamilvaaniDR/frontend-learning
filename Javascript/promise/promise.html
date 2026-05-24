@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Promises</h1>
+    <pre>
+        fun1()
+        .then(fun2,onError)
+        .then(onSuccess)
+        .catch(onError)
+        .finally(onFinally)
+    </pre>
+    <h3>In .then() we given 2 args one resolve and other reject , so then 1 works and then 2 also</h3>
+
+    <pre>
+        fun1()
+        .then(fun2)
+        .then(onSuccess)
+        .catch(onError)
+        .finally(onFinally)
+    </pre>
+    <h3>Above , if reject directly catch will be executed</h3>
+
+    <mark>From both cases finally will be executed, even resolve or reject</mark>
+</body>
+<script>
+    function fun1(){
+        return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve('Hello');
+            },100)
+        })
+    }
+
+    function fun2(data){
+        return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve(`${data} 😉`)
+            },100)
+        })
+    }
+
+    function onSuccess(data){
+        console.log(`Success: ${data}`)
+    }
+
+    function onError(error){
+        console.log(`ERROR: ${error}`)
+    }
+
+    function onFinally(){
+        console.log(`Finally Done and Dusted`)
+    }
+    //.then(success(resolve),failour(reject))
+    fun1()
+        .then(fun2)
+        .then(onSuccess)
+        .catch(onError)
+        .finally(onFinally)
+</script>
+</html>

@@ -1,0 +1,55 @@
+.container{
+    display: flex;
+    width: 450px;
+    height:600px;
+    flex-wrap: wrap;
+    font-size: 8rem;
+    align-items: flex-start;
+    border:20px solid green;
+}
+.box:nth-child(1){
+    align-self:stretch;
+}
+.box:nth-child(2){
+    align-self: baseline;
+}
+.box:nth-child(3){
+    align-self: center;
+}
+
+.box:nth-child(5){
+    align-self: flex-end;
+}
+.box:nth-child(6){
+    align-self:inherit;
+}
+#box1{
+    border: 5px solid grey;
+    
+    background-color: aqua;
+}
+#box2{
+    border: 5px solid grey;
+    
+    background-color: blue;
+}
+#box3{
+    border: 5px solid grey;
+    
+    background-color: blueviolet;
+}
+#box4{
+    border: 5px solid grey;
+    
+    background-color: chartreuse;
+}
+#box5{
+    border: 5px solid grey;
+    
+    background-color: rgb(7, 18, 78);
+}
+#box6{
+    border: 5px solid grey;
+    
+    background-color: rgb(215, 93, 104);
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Selector</title>
+</head>
+<body>
+    <h1> Query Selector</h1>
+    <p>Queryselect</p>
+    <p id>QueryselectAll</p>
+<section id="section">
+    Hello 🙏
+</section>
+
+<section id="section">
+    HIIII 🎉
+</section>
+</body>
+<script>
+        const one=document.querySelector('p');
+        const all=document.querySelectorAll('p');
+        console.log(one);
+        console.log(all);
+
+        const id=document.querySelector('#section');
+        console.log(id);
+        const ids=document.querySelectorAll('#section');
+        console.log(ids);
+    </script>
+</html>
+
+    

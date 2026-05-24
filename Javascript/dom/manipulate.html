@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulation</title>
+</head>
+<body>
+    <div id="cont">
+        <p>p1</p>
+        <p>p2</p>
+        <p>p3</p>
+    </div>
+    <ul id="ls">
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+        <li>Blog</li>
+    </ul>
+
+    <h1>Diffence b/w innertext & textcontent</h1>
+    <ul id="ls2">
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+        <li style="display: none;">Blog</li>
+    </ul>
+    
+    <h2>This is for inserAdjacentHTML eg</h2>
+    <ul id="menu">
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+        <li>Login</li>
+    </ul>
+
+    <h2>ReplaceChild</h2>
+    <div id="container">
+        <p id="old-child">Welcome</p>
+    </div>
+
+    <h2>RemoveChild</h2>
+    <div id="rm">
+        <p>paragarph1</p>
+        <p id="old">paragraph2</p>
+        <p>Paragraph3</p>
+        <p>Paragraph4</p>
+    </div>
+</body>
+<script>
+    const p=document.getElementById('cont');
+    const child=document.createElement('div');
+    child.id="child";
+    //child.textContent='<p>Iam the new Child</p>';
+    child.innerHTML='<p>Iam the new Child</p>';
+    p.appendChild(child);
+    console.log(child);
+    console.log(p);
+
+    const list=document.getElementById('ls');
+    const c=document.createElement('li');
+    c.textContent='Login'; 
+    //c.innerHTML='Login';
+    list.appendChild(c);
+    console.log(c);
+    console.log(list);
+
+    //difference b/w innerText , textContent
+
+    const ls=document.getElementById('ls2');
+    console.log(ls.textContent);
+    console.log(ls.innerText);
+   // ls.textContent="Hello";// entire elements in .list is replaced with Hello
+    console.log(ls);
+
+
+    //Element.after(node)
+
+    //parentNode.append(newNodes);  append() can accept multiple nodes and string also || appendChild() only one element
+    const eq=document.createElement('p');
+    eq.innerHTML='Welcome';
+    list.append(eq);
+    console.log(eq);
+    console.log(list);
+
+    //parentNode.prepend(newNodes); add newnodes to the begining of parent
+    const newele=document.createElement('h1');
+    newele.innerHTML='Prepend Text';
+
+    list.prepend(newele);
+
+    //parentNode.insertAdjacentHTML(position,text);
+    const menu=document.getElementById('menu');
+    //menu.insertAdjacentHTML("beforbegin","<h3>This is list menu</h3>");
+    menu.insertAdjacentHTML("afterbegin",'<li>Landing</p>');
+    menu.insertAdjacentHTML("beforeend",'<li>Profile</li>');
+    menu.insertAdjacentHTML("afterend",'<h4>This is the end of list menu</h4>');   
+
+
+    //parentNode.replaceChild(newChild,oldChild);
+    const parent=document.getElementById('container');
+    const newelement=document.createElement('p');
+    newelement.innerHTML='Not to come';
+    const old=document.getElementById('old-child');
+    parent.replaceChild(newelement,old);
+
+    //.cloneNode()
+    const og=document.getElementById('ls2');
+    let clone=og.cloneNode(true);// true clone ul and ls elements too
+    console.log(clone);
+
+    //.removeChild()
+    const ele=document.getElementById('rm');
+    rm.removeChild(rm.lastElementChild);
+    //rm.removeChild(rm.firstElementChild);
+
+    //parentNode.insertBefore(newNode,existingNode);
+    const newNode=document.createElement('p');
+    newNode.innerHTML='Newly added!';
+    ele.insertBefore(newNode,ele.firstElementChild);
+</script>
+</html>

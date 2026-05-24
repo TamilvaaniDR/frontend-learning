@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <div class="message">
+        <h1>heading 1</h1>
+        <h1>heading 1</h1>
+        <h1>heading 1</h1>
+    </div>
+
+
+    <h2 id="container">heading2</h2>
+    <div id="container">
+        <p>Paragraph1</p>
+        <p id="container">Paragraph2</p>
+    </div>
+
+    <form>
+    <input type="radio" name="lang" value="py">
+    <input type="radio" name="lang" value="java">
+    </form>
+
+    
+
+    
+
+</body>
+<script>
+    const tag=document.getElementsByTagName('h1');
+   // tag.innerText='Welcome';
+    console.log(tag); //HTMLCollection(3) [h1, h1, h1]
+
+    const con=document.getElementById('container');
+    console.log(con);
+
+    const name=document.getElementsByName('lang');
+    console.log(name);
+
+    const cls=document.getElementsByClassName('message');
+    console.log(cls);
+
+
+</script>
+</html>

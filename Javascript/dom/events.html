@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <div id="container">
+        <button type="button" onClick="console.log('Button Clicked!')">Click Here</button>
+    </div>
+    <h1>Event Models</h1>
+    <h2>
+        Event Bubbling
+    </h2>
+    <p>
+        Event starts at the most specific element and flows towards least specific element.
+        <pre>
+            button -> div ->body -> html -> doc
+        </pre>
+    </p>
+    <h2>Event capturing</h2>
+    <p>Event starts from least specific element and flows towards the most specific element</p>
+    <pre>
+        doc -> html ->body -> div -> button
+    </pre>
+
+    <h3> Piece of code that will be executed when the event occurs <mark>Event handler || Event Listener</mark></h3>
+    <p>onClick is ah event handler</p>
+    <button type="btn" onClick="displayMsg()">Click Me</button>
+
+    <h1>When the vent occurs, the web browser passed an Event object to the event handler</h1>
+    <button id="btn"  type="single" onClick="console.log(this.type)">Click</button>
+    <p> event.target, this , event</p>
+
+    <h1>Event handler</h1>
+    <button id="b1">Click Here</button>
+</body>
+<script>
+    function displayMsg(){
+        console.log('You have clicked the button Message from fn <script>');
+    }
+
+    let btn=document.getElementById('b1');
+    btn.onClick=function(){
+        console.log("Button clicked msg from fn");
+    }
+</script>
+</html>

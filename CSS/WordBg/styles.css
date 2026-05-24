@@ -1,0 +1,25 @@
+/*body{
+    background-image: url('desert.avif');
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size:auto;
+    background-attachment: fixed;
+}
+*/
+#head{
+    font-size: 8em;
+    text-align: center;
+    font-family: 'Raleway', sans-serif ;
+    background-image: url('glittery.jpg');
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    
+}
+
+#border{
+    border: 5px double blueviolet;
+}
+
+/*size clip -webkit-background-clip */

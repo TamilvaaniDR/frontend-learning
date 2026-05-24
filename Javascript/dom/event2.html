@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events and how they get triggered</title>
+</head>
+<body>
+    <h1>Events</h1>
+    <button id="btn2">onclick</button>
+    <button id="btn3">ondbclick</button>
+    <button id="btn4">onmouseover</button>
+    <button id="btn5">onmouseout</button>
+    <button id="btn6">onmouseup</button>
+    <button id="btn7">onmousedown</button>
+
+</body>
+<script>
+    
+    const btn2=document.getElementById('btn2');
+    const btn3=document.getElementById('btn3');
+    const btn4=document.getElementById('btn4');
+    const btn5=document.getElementById('btn5');
+    const btn6=document.getElementById('btn6');
+    const btn7=document.getElementById('btn7');
+
+    // window listens for events happening on the entire webpage
+    //specific id means , trigger only happens at specific defined id's event 
+    window.addEventListener('load',function(){
+        console.log('This is onload event');
+    });
+
+    btn2.addEventListener('click',function(){
+        console.log('This is on click event');
+    });
+     btn2.addEventListener('mousedown',function(){
+        console.log('This is mousedown event');
+    });
+     btn2.addEventListener('mouseup',function(){
+        console.log('This is mouseup event');
+    });
+
+     btn3.addEventListener('dblclick',function(){
+        console.log('This is on double click event');
+    });
+
+     btn4.addEventListener('mouseover',function(){
+        console.log('This is on mouseover event');
+    });
+
+     btn5.addEventListener('mouseout',function(){
+        console.log('This is on mouseout event');
+    });
+
+    //by using window obj , we can ensure that if we press any key on any place it should be triggered
+     window.addEventListener('keydown',function(){
+        console.log('This is on keydown event');
+    });
+
+     btn6.addEventListener('mouseup',function(){
+        console.log('This is on mouseup event');
+    });
+
+     btn7.addEventListener('mousedown',function(){
+        console.log('This is on mousedown event');
+    })
+
+</script>
+</html>

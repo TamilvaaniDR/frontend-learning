@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PseudoElements</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <p id="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit suscipit, excepturi possimus voluptatibus accusamus natus magni officia consequuntur dolores laboriosam assumenda esse repellat fugit consectetur, odio reprehenderit aut totam repellendus!</p>
+    <p class="p2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut quasi sapiente culpa deleniti aliquid? Illo, nulla. Eaque itaque voluptate, aliquid inventore voluptatem, error obcaecati ullam id, cumque hic voluptatum et?</p>
+    <ul class="mark1">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JAVASCRIPT</li>
+    </ul>
+    <ol class="mark2">
+        <li>Frontend</li>
+        <li>Backend</li>
+        <li>Database</li>
+    </ol>
+    <p class="p3">Selection property is applied.</p>
+</body>
+<script>
+    const p1=document.getElementById('p1');
+    const p2=document.querySelector('.p2');
+    const p3=document.querySelector('.p3');
+    const m1=document.querySelector('.mark1');
+    const m2=document.querySelector('.mark2');
+    p1.addEventListener('click',()=>{
+        console.log('Pseudo Element First Letter');
+    });
+    p2.addEventListener('click',()=>{
+        console.log('Pseudo Element First Line');
+    });
+    p3.addEventListener('click',()=>{
+        console.log('Pseudo Element Selection');
+    });
+    m1.addEventListener('click',()=>{
+        console.log('Pseudo Element Marker');
+    });
+    m2.addEventListener('click',()=>{
+        console.log('Pseudo Element Marker');
+    });
+</script>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #Dob{
+            font-size:20px;
+            background-color: blueviolet;
+            width:300px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Get inline css property </h1>
+    <input type="text" id="username" placeholder="username" style="background-color:red; font-size: 20px;">
+
+    <h1>Get css property from internal css</h1>
+    <input type="text" id="Dob" placeholder="Dob">
+
+    <h1>Class Name Property</h1>
+    <h1 id="title" class="main message">JavaScript DOM</h1>
+</body>
+<script>
+    const input=document.getElementById('username');
+
+    //style -> we can see the inline css property and set the inline css property
+    console.log(input.style);// shows style properties
+    console.log(input.style.backgroundColor); // shows its value
+    console.log(input.style.fontSize);
+
+    input.style.padding="10px";
+    console.log(input);
+
+    //input.style.cssText="width:200px";// removes already existing inline css
+    //console.log(input);
+    //to just extend the style use +
+    //cssText -> add one or more css properties
+    input.style.cssText+="width: 200px; height:200px;";
+
+
+    //window.getComputedStyle(element,pseudoElement);
+    const ip=document.getElementById('Dob')
+    console.log(window.getComputedStyle(ip).backgroundColor);//get the bg color of #Dob which is defined in internal css
+    console.log(window.getComputedStyle(ip).width);
+
+    //classNameProperty
+    const title=document.getElementById('title');
+    console.log(title.className);
+    //add new class
+
+   // title.className="new";//overwritten the existing class
+      title.className +=" new";//adds new class dont overwrite the old
+   console.log(title);
+
+   //display the class of any html element
+    console.log(title.classList);
+    //also add new class
+    //title.classList.add("newClass");
+    //console.log(title);
+
+    title.classList.add("class1","class2");//add multiple classes using classList
+    console.log(title);
+
+    title.classList.remove("class1","class2");
+    console.log(title);
+
+    title.classList.replace("message","msg");
+
+    console.log(title.classList.contains('message'));
+    console.log(title.classList.contains('msg'));
+
+    title.classList.toggle("msg");//if classNAme is avaliable it will remove it , if not available it will add it
+    title.classList.toggle("toggledclass");
+</script>
+</html>

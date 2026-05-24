@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background-image:url('https://www.shutterstock.com/image-vector/color-gradient-background-abstract-orange-600nw-2480677725.jpg');
+    background-size:cover;
+    background-position:center;
+    min-height:100vh;
+    color:white;
+    font-family:Arial;
+}
+
+.header{
+    display:grid;
+    grid-template-columns:1fr 2fr 1fr;
+    align-items:center;
+    padding:20px 70px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+
+.nav{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+}
+
+.nav a{
+    text-decoration:none;
+    color:white;
+}
+
+.search-box{
+    display:flex;
+    justify-content:flex-end;
+}
+
+.ip-search{
+    padding:10px;
+    border:none;
+    outline:none;
+}
+
+.btn{
+    padding:10px 20px;
+    border:none;
+    background:orange;
+    color:white;
+    cursor:pointer;
+}
+
+.section{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:50px;
+    padding:60px 70px;
+    align-items:center;
+}
+
+.section-content{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.section-content h1{
+    font-size:50px;
+}
+
+.join{
+    width:120px;
+    padding:10px;
+    border:none;
+    border-radius:8px;
+    background:orange;
+    color:white;
+}
+
+.login{
+    background:black;
+    padding:30px;
+    border-radius:10px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.login input{
+    padding:10px;
+}
+
+.login button{
+    padding:10px;
+    border:none;
+    border-radius:8px;
+    background:orange;
+    color:white;
+}
+
+.image{
+    display:flex;
+    gap:10px;
+}
+
+.image img{
+    width:30px;
+    height:30px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="logo">
+        <h2>ProRoz</h2>
+        <p>🌍</p>
+    </div>
+
+    <nav class="nav">
+        <a href="">HOME</a>
+        <a href="">ABOUT</a>
+        <a href="">SERVICE</a>
+        <a href="">DESIGN</a>
+        <a href="">CONTACT</a>
+    </nav>
+
+    <div class="search-box">
+        <input type="text" class="ip-search" placeholder="Type to Search">
+        <button class="btn">Search</button>
+    </div>
+
+</header>
+
+<section class="section">
+
+    <div class="section-content">
+        <h1>Web Design & Development Course</h1>
+
+        <p>
+            Web development is a specialization of design stream.
+            Uses HTML, CSS and JavaScript.
+        </p>
+
+        <button class="join">Join Us</button>
+    </div>
+
+    <div class="login">
+
+        <button>Login Here</button>
+
+        <input type="email" placeholder="Enter Email">
+        <input type="password" placeholder="Enter Password">
+
+        <button>Login</button>
+
+        <div>
+            <p>Don't have an account?</p>
+            <p>Sign up here</p>
+        </div>
+
+        <div class="image">
+            <img src="https://cdn-icons-png.flaticon.com/128/1077/1077041.png">
+            <img src="https://cdn-icons-png.flaticon.com/128/733/733547.png">
+            <img src="https://cdn-icons-png.flaticon.com/128/733/733579.png">
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>
