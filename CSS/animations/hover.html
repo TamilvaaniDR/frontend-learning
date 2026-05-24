@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container{
+            display:grid;
+            grid-template: repeat(3,1fr)/repeat(3,1fr);
+            gap:20px;
+        }
+        .box{
+            width:100px;
+            height:100px;
+            box-shadow: 0px 0px 10px rgb(96, 221, 235);
+            transition: 0.5s ease;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box:hover{
+            transform: scale(1.2);
+            box-shadow: 0px 0px 20px rgb(218, 30, 186);
+        }
+        .move{
+            width:100px;
+            height:100px;
+            /*background-color: cadetblue;*/
+            animation: move 2s infinite;
+        }
+
+        @keyframes move{
+            from{
+                transform: translateX(0);
+            }
+            to{
+                transform: translateX(200px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">Hi</div>
+        <div class="box">Hello</div>
+        <div class="box">Hi</div>
+        <div class="box">Hello</div>
+        <div class="box">Hi</div>
+        <div class="box">Hello</div>
+        <div class="box">Hi</div>
+        <div class="box">Hello</div>
+        <div class="box move">Hi</div>
+    </div>
+
+</body>
+</html>
